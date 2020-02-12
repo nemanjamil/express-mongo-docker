@@ -5,7 +5,10 @@ services:
     restart: always
     build: .
     ports:
-      - '80:3000'
+      - '8082:3000'
+    volumes: 
+      - ./:/usr/src/app
+
     links:
       - mongo
   mongo:
