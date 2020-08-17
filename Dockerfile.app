@@ -4,6 +4,8 @@ WORKDIR /usr/src/app
 
 COPY package.json package-lock.json entrypoint.sh ./
 
+#RUN npm install -g nodemon
+
 COPY . .
 
 ARG NODE_ENV='dev'
@@ -13,4 +15,5 @@ EXPOSE $SERVER_PORT
 
 ENTRYPOINT ["sh", "./entrypoint.sh"]
 
-CMD [ "node", "index.js" ]
+# CMD [ "nodemon", "index.js" ]
+CMD [ "npm", "run", "dev" ]
