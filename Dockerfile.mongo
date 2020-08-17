@@ -1,0 +1,3 @@
+FROM mongo:4.0.13-xenial
+
+COPY ./mongod.conf /etc/mongod.conf

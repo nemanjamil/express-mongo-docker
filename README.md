@@ -6,14 +6,15 @@
 
 ```bash
 # Run in Docker
-docker-compose up
-# use -d flag to run in background
+
+# Copy .env-example -> .env
+cp .env-example .env
+
+# Run | use -d flag to run in background
+docker-compose up --build --no-deps
 
 # Tear down
 docker-compose down
-
-# To be able to edit files, add volume to compose file
-volumes: ['./:/usr/src/app']
 
 # To re-build
 docker-compose build
